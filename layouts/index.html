@@ -6,12 +6,13 @@
     <body id="page-top" class="index">
         {{ partial "nav.html" . }}
         {{ partial "hero.html" . }}
-        {{ partial "services.html" . }}
-        {{ partial "features.html" . }}
-        {{ partial "plans.html" . }}
-        {{ partial "team.html" . }}
-        <!-- {{ partial "clients.html" . }} -->
-        {{ partial "contact.html" . }}
+        {{ if isset .Site.Params "services" }}{{ partial "services.html" . }}{{ end }}
+        {{ if isset .Site.Params "features" }}{{ partial "features.html" . }}{{ end }}
+        {{ if isset .Site.Params "plans" }}{{ partial "plans.html" . }}{{ end }}
+        {{ if isset .Site.Params "portfolio" }}{{ partial "portfolio.html" . }}{{ end }}
+        {{ if isset .Site.Params "team" }}{{ partial "team.html" . }}{{ end }}
+        {{ if isset .Site.Params "clients" }}{{ partial "clients.html" . }}{{ end }}
+        {{ if isset .Site.Params "contact" }}{{ partial "contact.html" . }}{{ end }}
         {{ partial "footer.html" . }}
         {{ partial "modals.html" . }}
         {{ partial "js.html" . }}

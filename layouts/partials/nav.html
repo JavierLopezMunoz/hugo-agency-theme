@@ -17,21 +17,36 @@
                 <li class="hidden">
                     <a href="#page-top"></a>
                 </li>
+                {{ if isset .Site.Params "services" }}
                 <li>
                     <a class="page-scroll" href="#services">{{ with .Site.Params.navigation.services }}{{ . }}{{ end }}</a>
                 </li>
+                {{ end }}
+                {{ if isset .Site.Params "features" }}
                 <li>
                     <a class="page-scroll" href="#features">{{ with .Site.Params.navigation.features }}{{ . }}{{ end }}</a>
                 </li>
+                {{ end }}
+                {{ if isset .Site.Params "portfolio" }}
+                <li>
+                    <a class="page-scroll" href="#portfolio">{{ with .Site.Params.navigation.portfolio }}{{ . }}{{ end }}</a>
+                </li>
+                {{ end }}
+                {{ if isset .Site.Params "plans" }}
                 <li>
                     <a class="page-scroll" href="#plans">{{ with .Site.Params.navigation.plans }}{{ . }}{{ end }}</a>
                 </li>
+                {{ end }}
+                {{ if isset .Site.Params "team" }}
                 <li>
                     <a class="page-scroll" href="#team">{{ with .Site.Params.navigation.team }}{{ . }}{{ end }}</a>
                 </li>
+                {{ end }}
+                {{ if isset .Site.Params "contact" }}
                 <li>
                     <a class="page-scroll" href="#contact">{{ with .Site.Params.navigation.contact }}{{ . }}{{ end }}</a>
                 </li>
+                {{ end }}
             </ul>
         </div>
         {{ "<!-- /.navbar-collapse -->" | safeHTML }}
