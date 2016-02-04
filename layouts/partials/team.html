@@ -8,8 +8,13 @@
             </div>
         </div>
         <div class="row">
+            {{ $len := len .Site.Params.team.members }}
             {{ range .Site.Params.team.members }}
+            {{ if eq $len 2}}
+            <div class="col-sm-6">
+            {{ else }}
             <div class="col-sm-4">
+            {{ end }}
                 <div class="team-member">
                     <img src="img/team/{{ .img }}" class="img-responsive img-circle" alt="">
                     <h4>{{ .name }}</h4>
